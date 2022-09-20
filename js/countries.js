@@ -15,11 +15,12 @@ const displayCountries = countries => {
 }
 
 const getCountryHTML = country => {
-    // show flags without destructuring initial Option--01
+    // show flags destructuring Option--02
+    const { name, flags } = country;
     return `
     <div class="country">
-        <h2>${country.name.common}</h2>
-        <img src="${country.flags.png}">
+        <h2>${name.common}</h2>
+        <img src="${flags.png}">
     </div>
     `
     // <></>
