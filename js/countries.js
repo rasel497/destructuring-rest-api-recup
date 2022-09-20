@@ -14,9 +14,9 @@ const displayCountries = countries => {
     container.innerHTML = countriesHTML.join(' ');
 }
 
-const getCountryHTML = country => {
-    // show flags destructuring Option--02
-    const { name, flags } = country;
+// show flags destructuring in parameter Option - 03
+const getCountryHTML = ({ name, flags }) => {
+    // const { name, flags } = country;
     return `
     <div class="country">
         <h2>${name.common}</h2>
@@ -25,5 +25,28 @@ const getCountryHTML = country => {
     `
     // <></>
 }
+
+// without destructuring normal way-01
+// const getCountryHTML = country => {
+//     return `
+//     <div class="country">
+//         <h2>${country.name.common}</h2>
+//         <img src="${country.flags.png}">
+//     </div>
+//     `
+//     // <></>
+// }
+
+// show flags destructuring Option-02
+// const getCountryHTML = country => {
+//     const { name, flags } = country;
+//     return `
+//     <div class="country">
+//         <h2>${name.common}</h2>
+//         <img src="${flags.png}">
+//     </div>
+//     `
+//     // <></>
+// }
 
 loadCountries();
